@@ -10,7 +10,7 @@ ___
 Este contrato sirve para manejar subastas.  
 Para los ejemplos se utiliza *javascript*  
 En la carpeta **modulo 2** se encuentran los contratos y tests usados  
-
+##### Funciones  
 Para iniciar la subasta se llama al método **openAuction** que recibe 2 parámetros
 ```js
 // Indica el mínimo con el que se inicia la subasta
@@ -65,4 +65,8 @@ Es necesario que:
 ```js
 await auction.withdraw();
 ```
+##### Eventos  
+El contrato emite 2 eventos  
+1. EventNewBid: Que se emite cada vez que se acepta una nueva oferta
+2. EventAuctionClosed: Que se emite cuando se finaliza la subasta
 
