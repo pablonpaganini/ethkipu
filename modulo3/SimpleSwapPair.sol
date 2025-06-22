@@ -44,6 +44,8 @@ contract SimpleSwapPair is ERC20, ISimpleSwapPair {
      * @param _token1 Address of the second token
      */
     function initialize(address _token0, address _token1) external isFactory {
+        require(_token0 != _token1, "SimpleSwap:IDENTICAL_ADDRESSES");
+        require(token0 == address(0) && token1 == address(0), "SimpleSwap:PAIR_ALREADY_CREATED");
         token0 = _token0;
         token1 = _token1;
     }
